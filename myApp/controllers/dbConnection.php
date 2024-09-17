@@ -10,15 +10,11 @@ namespace MYAPP\Controllers;
             $password="12345678";
             $dbname="task1_db";
         
-            $conn=new \mysqli($servername, $username, $password, $dbname); /* create connection */
+            $conn=new \mysqli($servername, $username, $password, $dbname); 
         
             if($conn->connect_error){
-                die("Connection failed: ".$conn->connect_error);   /* checking connection */
+                die("Connection failed: ".$conn->connect_error);  
             }                                              
-            else
-            {
-                echo"Connected Succsefully to DataBase"."<br>";
-            }
         
             ini_set('display_errors',1);
             error_reporting(E_ALL);

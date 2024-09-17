@@ -24,7 +24,6 @@ class productsModel extends dbQueries{
     }
     public function getProductById($id)
     {
-        // echo "id value is $id";
         $result= $this->selectById($this->_table, $id);
         return $result;
     }

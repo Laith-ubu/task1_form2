@@ -15,10 +15,6 @@ class ProductController extends \controller{
     
     protected $conn;
         
-    public function __construct(){
-        parent::__construct(); 
-    }
-
     public function home() {
         $this->render('index');
     }
@@ -39,11 +35,8 @@ class ProductController extends \controller{
         $this->render('addNew');
     }
     public function render($view, $data = []) {
-        extract($data); // Convert array keys to variables
-        include __DIR__ . "/../views/$view.php"; // Include the view file
-    }
-    public function action() {
-        echo'Action ';
+        extract($data); 
+        include __DIR__ . "/../views/$view.php"; 
     }
     public function add(){
         
@@ -82,7 +75,7 @@ class ProductController extends \controller{
 
             $products = [];
             while ($row = $result->fetch_assoc()) {
-            $products[] = $row; // Store each row in the products array
+            $products[] = $row; 
         }
             return $products;
             
@@ -103,10 +96,9 @@ class ProductController extends \controller{
 
         $products = [];
         while ($row = $result->fetch_assoc()) {
-        $products[] = $row; // Store each row in the products array
+        $products[] = $row; 
     }
         if ($result) {
-            // Pass the data to the view
             $this->render('editData', ['product' => $products]);
         } else {
             echo "Product not found.";
@@ -119,7 +111,6 @@ class ProductController extends \controller{
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            echo 'zag';
             $id = $_GET['id'] ?? null;
             $name = $_GET['name'] ?? '';
             $description = $_GET['Desc'] ?? '';

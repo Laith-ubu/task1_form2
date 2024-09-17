@@ -9,7 +9,6 @@ require_once './controllers/dbConnection.php';
 require_once './models/dbQueries.php';
 require_once 'router/Router.php';
 require_once __DIR__ . '/autoloader.php';
-require_once __DIR__ . '/config/__init.php';
 
 
 ini_set('display_errors', 1);
@@ -80,8 +79,6 @@ $routes = [
 
 $router = new Router();
 $router->setRoutes($routes);
-
-// $router->post('/myApp/views/add', ProductController::class, 'add');
 
 $router->dispatch();
 

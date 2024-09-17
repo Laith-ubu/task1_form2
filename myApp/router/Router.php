@@ -13,9 +13,7 @@ include_once 'models/productsModel.php';
 
 class Router {
     protected $routes = [];
-    public function __construct() {
-    //   echo"Router Constructor<br>";
-    }
+
     public function setRoutes(array $routes)
     {
         $this->routes = $routes;
@@ -44,17 +42,11 @@ class Router {
     {
         $this->addRoute($route, $controller, $action, "PUT");
     }
-    public function dispatch() //to send uri
+    public function dispatch() 
     {
         $uri = strtok($_SERVER['REQUEST_URI'], '?');
         $method =  $_SERVER['REQUEST_METHOD'];
 
-        var_dump($uri);
-
-        var_dump($method);
-        // die(var_dump($uri));
-
-        //var_dump($this->routes[$method][$uri]);
         if (isset($this->routes[$method][$uri])) {
 
             
