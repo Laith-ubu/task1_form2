@@ -10,7 +10,7 @@
             height:500px;">
             <img  src="https://media.makeameme.org/created/please-leave-me-ea308f0cb0.jpg" alt="">
             <br>
-            <button><a href="./index.php">go back home</a></button>
+            <button><a href="/tesst">go back home</a></button>
         </div>
 
         <?php include 'shared_footer.php'; ?> 

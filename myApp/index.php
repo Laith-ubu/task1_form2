@@ -54,6 +54,10 @@ $routes = [
             'controller' => ProductController::class,
             'action' => 'delete'
         ],
+        '/tesst' => [
+            'controller' => ProductController::class,
+            'action' => 'home'
+        ],
     ],
     'POST' => [
         '/myApp/add' => [
